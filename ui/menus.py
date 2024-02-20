@@ -1,6 +1,7 @@
 import sys
 from tabulate import tabulate
 from funciones.globales import borrar_pantalla
+from .estudiantes import agregar_estudiante
 
 def wrapper(func):
   def inner():
@@ -17,6 +18,7 @@ def menu_principal():
     """
   print(titulo)
   menu = [["1.","Agregar estudiante"],["2.","Calificar estudiante"],["3.","Registro areas de entrenamiento"],["4.","Registrar nuevas rutas"],["5.","Salir"]]
+  print(tabulate(menu,tablefmt="grid"))
   opcion = input("\n>> ")
 
   if opcion == "1":
@@ -36,9 +38,10 @@ def menu_agregar_estudiantes():
   """
   print(titulo)
   menu = [["1.", "Agregar estudiante"], ["2.", "Eliminar estudiante"], ["3.", "Mostrar listado de estudiantes"], ["4","Salir"]]
+  print(tabulate(menu,tablefmt="grid"))
   opcion = input("\n>> ")
   if opcion == "1":
-    pass
+    agregar_estudiante()    
   elif opcion == "4":
     menu_principal()
   else:
