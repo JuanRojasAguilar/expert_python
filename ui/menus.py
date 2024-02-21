@@ -41,10 +41,11 @@ def menu_agregar_estudiantes():
   print(tabulate(menu,tablefmt="grid"))
   opcion = input("\n>> ")
   if opcion == "1":
-    agregar_estudiante()    
+    agregar_estudiante()
+    menu_principal()
   elif opcion == "4":
     menu_principal()
   else:
-    menu_agregar_estudiates()
+    menu_agregar_estudiantes()
 
 
